@@ -18,7 +18,7 @@
 8. [Installation & Setup](#installation--setup)
 9. [API Reference](#api-reference)
 10. [Troubleshooting](#troubleshooting)
-11. [Future Roadmap](#future-roadmap)
+
 
 ---
 
@@ -1176,7 +1176,7 @@ streamlit run app.py --server.port 8502
 
 ---
 
-## Future Roadmap
+
 
 ### Planned Features (Next 3 months)
 
