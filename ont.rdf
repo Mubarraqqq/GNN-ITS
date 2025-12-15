@@ -1,0 +1,1469 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.example.org/gnn-its#"
+     xml:base="http://www.example.org/gnn-its"
+     xmlns:ont="http://www.co-ode.org/ontologies/ont.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#assessesObjective -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#assessesObjective">
+        <rdfs:domain rdf:resource="http://www.example.org/gnn-its#Assessment"/>
+        <rdfs:range rdf:resource="http://www.example.org/gnn-its#LearningObjective"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#generatesFeedback -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#generatesFeedback">
+        <rdfs:domain rdf:resource="http://www.example.org/gnn-its#FeedbackEngine"/>
+        <rdfs:range rdf:resource="http://www.example.org/gnn-its#Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#hasLayer -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#hasLayer">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/gnn-its#GNNConcept"/>
+        <rdfs:range rdf:resource="http://www.example.org/gnn-its#GNNLayer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#hasRepresentation -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#hasRepresentation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/gnn-its#GNNConcept"/>
+        <rdfs:range rdf:resource="http://www.example.org/gnn-its#GraphRepresentation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#managesSession -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#managesSession">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/gnn-its#SessionManager"/>
+        <rdfs:range rdf:resource="http://www.example.org/gnn-its#Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#monitorsUser -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#monitorsUser">
+        <rdfs:range rdf:resource="http://www.example.org/gnn-its#Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#producesGraph -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#producesGraph">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#trainedOn"/>
+        <rdfs:domain rdf:resource="http://www.example.org/gnn-its#LearningTask"/>
+        <rdfs:range rdf:resource="http://www.example.org/gnn-its#GraphInstance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#requiresConcept -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#requiresConcept">
+        <rdfs:domain rdf:resource="http://www.example.org/gnn-its#LearningTask"/>
+        <rdfs:range rdf:resource="http://www.example.org/gnn-its#GNNConcept"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#producesGraph"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#targetsObjective -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#targetsObjective">
+        <rdfs:domain rdf:resource="http://www.example.org/gnn-its#LearningTask"/>
+        <rdfs:range rdf:resource="http://www.example.org/gnn-its#LearningObjective"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#teachesConcept -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#teachesConcept">
+        <rdfs:domain rdf:resource="http://www.example.org/gnn-its#LearningTask"/>
+        <rdfs:range rdf:resource="http://www.example.org/gnn-its#GNNConcept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#tracksProgress -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#tracksProgress">
+        <rdfs:domain rdf:resource="http://www.example.org/gnn-its#ProgressTracker"/>
+        <rdfs:range rdf:resource="http://www.example.org/gnn-its#Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#trainedOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#trainedOn">
+        <rdfs:domain rdf:resource="http://www.example.org/gnn-its#GNNConcept"/>
+        <rdfs:range rdf:resource="http://www.example.org/gnn-its#GraphDataset"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#usesGraphDataset -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#usesGraphDataset">
+        <rdfs:domain rdf:resource="http://www.example.org/gnn-its#GNNConcept"/>
+        <rdfs:domain rdf:resource="http://www.example.org/gnn-its#LearningTask"/>
+        <rdfs:range rdf:resource="http://www.example.org/gnn-its#GraphDataset"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#usesLoss -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#usesLoss">
+        <rdfs:domain rdf:resource="http://www.example.org/gnn-its#TrainingConcept"/>
+        <rdfs:range rdf:resource="http://www.example.org/gnn-its#LossFunction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#usesMetric -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#usesMetric">
+        <rdfs:domain rdf:resource="http://www.example.org/gnn-its#TrainingConcept"/>
+        <rdfs:range rdf:resource="http://www.example.org/gnn-its#AccuracyMetric"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#usesPooling -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#usesPooling">
+        <rdfs:domain rdf:resource="http://www.example.org/gnn-its#GNNConcept"/>
+        <rdfs:range rdf:resource="http://www.example.org/gnn-its#GraphPooling"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#accuracyValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accuracyValue">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#aggregationType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#aggregationType">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#assessmentDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#assessmentDescription">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#componentDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#componentDescription">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#currentScore -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#currentScore">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#datasetName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#datasetName">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#epochNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#epochNumber">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#estimatedCompletionTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#estimatedCompletionTime"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#feedbackPreference -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#feedbackPreference">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#feedbackText -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#feedbackText">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#feedbackType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#feedbackType">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#graphLabel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#graphLabel">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#hiddenDimension -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#hiddenDimension">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#layerName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#layerName">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#learningPace -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#learningPace">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#learningRate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#learningRate">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#lossValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#lossValue">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#matrixSize -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#matrixSize">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#maxScore -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#maxScore">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#name">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#numEdgeFeatures -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#numEdgeFeatures">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#numEdges -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#numEdges">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#numGraphs -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#numGraphs">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#numNodeFeatures -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#numNodeFeatures">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#numNodes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#numNodes">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#numParameters -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#numParameters">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#objectiveDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#objectiveDescription">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#objectiveLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#objectiveLevel">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#passingScore -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#passingScore">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#progressPercentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#progressPercentage">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#qualification -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#qualification">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#requiresCoding -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#requiresCoding">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#sourceURL -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#sourceURL">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#studentID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#studentID">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#studentLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#studentLevel">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#taskDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#taskDescription">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#taskDifficultyLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#taskDifficultyLevel">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#teachingExperienceYears -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#teachingExperienceYears">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#timeSpent -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#timeSpent">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#versionNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#versionNumber">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#FormativeAssessment -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#FormativeAssessment">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.example.org/gnn-its#Assessment"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#passingScore"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#InstructorSmith -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#InstructorSmith">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#User"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Student001 -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Student001">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#User"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#AccuracyMetric -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#AccuracyMetric">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#TrainingConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#AdjacencyMatrix -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#AdjacencyMatrix">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#GraphRepresentation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#Assessment -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#Assessment">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#assessesObjective"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.example.org/gnn-its#LearningObjective"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#BipartiteGraph -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#BipartiteGraph">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#GraphType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#Chain -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#Chain">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#GraphType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#CodingAssessment -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#CodingAssessment">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#Assessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#CodingTask -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#CodingTask">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#LearningTask"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#CompleteGraph -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#CompleteGraph">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#GraphType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#ConceptAssessment -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#ConceptAssessment">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#Assessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#ConceptExplanation -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#ConceptExplanation">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#LearningTask"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#CrossEntropy -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#CrossEntropy">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#LossFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#Cycle -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#Cycle">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#GraphType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#EdgeFeatureMatrix -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#EdgeFeatureMatrix">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#GraphRepresentation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#EvaluateAccuracy -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#EvaluateAccuracy">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#LearningObjective"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#FeedbackEngine -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#FeedbackEngine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#ITSComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#GATLayer -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#GATLayer">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#GNNLayer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#GCNLayer -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#GCNLayer">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#GNNLayer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#GNNConcept -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#GNNConcept"/>
+    
+
+
+    <!-- http://www.example.org/gnn-its#GNNLayer -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#GNNLayer">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#GNNConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#GlobalMaxPooling -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#GlobalMaxPooling">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#GraphPooling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#GlobalMeanPooling -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#GlobalMeanPooling">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#GraphPooling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#GraphClassificationConcept -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#GraphClassificationConcept">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#GNNConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#GraphClassificationExercise -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#GraphClassificationExercise">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#LearningTask"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#GraphDataset -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#GraphDataset">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#GraphDomainConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#GraphDomainConcept -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#GraphDomainConcept"/>
+    
+
+
+    <!-- http://www.example.org/gnn-its#GraphIdentificationQuiz -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#GraphIdentificationQuiz">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#Assessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#GraphInstance -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#GraphInstance">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#GraphDomainConcept"/>
+        <owl:disjointWith rdf:resource="http://www.example.org/gnn-its#GraphType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#GraphPooling -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#GraphPooling">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#GNNConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#GraphRepresentation -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#GraphRepresentation">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#GNNConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#GraphSAGELayer -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#GraphSAGELayer">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#GNNLayer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#GraphType -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#GraphType">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#GraphDomainConcept"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#teachesConcept"/>
+                <owl:someValuesFrom rdf:resource="http://www.example.org/gnn-its#GNNConcept"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#ITSComponent -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#ITSComponent">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#targetsObjective"/>
+                <owl:someValuesFrom rdf:resource="http://www.example.org/gnn-its#LearningObjective"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#ImplementMessagePassing -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#ImplementMessagePassing">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#LearningObjective"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#Instructor -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#Instructor">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#User"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#InteractiveExercise -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#InteractiveExercise">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#LearningTask"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#KnowledgeModel -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#KnowledgeModel">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#ITSComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#LearningObjective -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#LearningObjective">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#targetsObjective"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.example.org/gnn-its#LearningObjective"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#LearningTask -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#LearningTask"/>
+    
+
+
+    <!-- http://www.example.org/gnn-its#LossFunction -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#LossFunction">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#TrainingConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#MessagePassing -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#MessagePassing">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#GNNConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#NeighborhoodAggregation -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#NeighborhoodAggregation">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#MessagePassing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#NodeFeatureMatrix -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#NodeFeatureMatrix">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#GraphRepresentation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#ProgressTracker -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#ProgressTracker">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#ITSComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#RealWorldGraphDataset -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#RealWorldGraphDataset">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#GraphDataset"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#ReflectionTask -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#ReflectionTask">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#LearningTask"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#SessionManager -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#SessionManager">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#ITSComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#Star -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#Star">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#GraphType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#Student -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#Student">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#User"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#SummativeAssessment -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#SummativeAssessment">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#Assessment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#SyntheticGraphDataset -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#SyntheticGraphDataset">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#GraphDataset"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#TrainGCN -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#TrainGCN">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#LearningObjective"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#TrainingConcept -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#TrainingConcept">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#GNNConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#Tree -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#Tree">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#GraphType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#TutoringModel -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#TutoringModel">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#ITSComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#UnderstandRepresentation -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#UnderstandRepresentation">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#LearningObjective"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#UpdateFunction -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#UpdateFunction">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#MessagePassing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#User -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#User"/>
+    
+
+
+    <!-- http://www.example.org/gnn-its#ValidationSplit -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#ValidationSplit">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#TrainingConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/gnn-its#WorkedExample -->
+
+    <owl:Class rdf:about="http://www.example.org/gnn-its#WorkedExample">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/gnn-its#LearningTask"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#AdaptiveTutoringModel -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#AdaptiveTutoringModel">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#ITSComponent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#BasicGraphRepresentation -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#BasicGraphRepresentation">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#GNNConcept"/>
+        <ont:targetsObjective rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ObjTrainGCNModel"/>
+        <ont:trainedOn rdf:resource="http://www.co-ode.org/ontologies/ont.owl#CoraDataset"/>
+        <ont:name>Basic Graph Representation</ont:name>
+        <ont:objectiveLevel>Explain Graph Representation</ont:objectiveLevel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#BipartiteGraphExample -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#BipartiteGraphExample">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#GraphType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#ChainGraphExample -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#ChainGraphExample">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#GraphType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#CitationNetworkSample -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#CitationNetworkSample">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#GraphInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#CodingAssessmentGCN -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#CodingAssessmentGCN">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#Assessment"/>
+        <ont:assessesObjective rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ObjTrainGCNModel"/>
+        <ont:requiresConcept rdf:resource="http://www.co-ode.org/ontologies/ont.owl#GCNLayerFundamentals"/>
+        <ont:assessmentDescription>10 question quiz</ont:assessmentDescription>
+        <ont:currentScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">100</ont:currentScore>
+        <ont:maxScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">100</ont:maxScore>
+        <ont:passingScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60</ont:passingScore>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#CodingTaskImplementGCN -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#CodingTaskImplementGCN">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#LearningTask"/>
+        <ont:targetsObjective rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ObjTrainGCNModel"/>
+        <ont:teachesConcept rdf:resource="http://www.co-ode.org/ontologies/ont.owl#GraphSAGELearning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#CompleteGraphExample -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#CompleteGraphExample">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#GraphType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#CoraDataset -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#CoraDataset">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#GraphDataset"/>
+        <ont:datasetName>Cora</ont:datasetName>
+        <ont:numGraphs rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2708</ont:numGraphs>
+        <ont:numNodeFeatures rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1433</ont:numNodeFeatures>
+        <ont:sourceURL>https://dataset.url</ont:sourceURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#CycleGraphExample -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#CycleGraphExample">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#GraphType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#DomainKnowledgeModel -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#DomainKnowledgeModel">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#ITSComponent"/>
+        <ont:componentDescription>Tracks the user&apos;s knowledge state</ont:componentDescription>
+        <ont:versionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.1</ont:versionNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#ExplainAdjacencyMatrixConcept -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#ExplainAdjacencyMatrixConcept">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#LearningTask"/>
+        <ont:producesGraph rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ToyGraph1"/>
+        <ont:targetsObjective rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ObjUnderstandGraphRep"/>
+        <ont:teachesConcept rdf:resource="http://www.co-ode.org/ontologies/ont.owl#BasicGraphRepresentation"/>
+        <ont:estimatedCompletionTime>10 mins</ont:estimatedCompletionTime>
+        <ont:requiresCoding rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</ont:requiresCoding>
+        <ont:taskDescription>Explain adjacency matrix</ont:taskDescription>
+        <ont:taskDifficultyLevel>Easy</ont:taskDifficultyLevel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#FinalSummativeGraphAssessment -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#FinalSummativeGraphAssessment">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#Assessment"/>
+        <ont:assessesObjective rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ObjEvaluateGraphAccuracy"/>
+        <ont:requiresConcept rdf:resource="http://www.co-ode.org/ontologies/ont.owl#TrainingWorkflowConcept"/>
+        <ont:usesMetric rdf:resource="http://www.co-ode.org/ontologies/ont.owl#GraphClassificationBasics"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#GATAttentionMechanism -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#GATAttentionMechanism">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#GNNConcept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#GCNLayerFundamentals -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#GCNLayerFundamentals">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#GNNConcept"/>
+        <ont:hasRepresentation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#StarGraphExample"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#GraphClassificationBasics -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#GraphClassificationBasics">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#GNNConcept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#GraphClassificationMiniProject -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#GraphClassificationMiniProject">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#LearningTask"/>
+        <ont:targetsObjective rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ObjEvaluateGraphAccuracy"/>
+        <ont:usesPooling rdf:resource="http://www.co-ode.org/ontologies/ont.owl#PoolingOverview"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#GraphSAGELearning -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#GraphSAGELearning">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#GNNConcept"/>
+        <ont:hasLayer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#PoolingOverview"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#GraphTypeIdentificationQuiz -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#GraphTypeIdentificationQuiz">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#Assessment"/>
+        <ont:assessesObjective rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ObjEvaluateGraphAccuracy"/>
+        <ont:requiresConcept rdf:resource="http://www.co-ode.org/ontologies/ont.owl#GraphClassificationBasics"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#InstructorJohn -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#InstructorJohn">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#User"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#InteractiveNodeAggregationExercise -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#InteractiveNodeAggregationExercise">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#LearningTask"/>
+        <ont:producesGraph rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ToyGraph2"/>
+        <ont:teachesConcept rdf:resource="http://www.co-ode.org/ontologies/ont.owl#GCNLayerFundamentals"/>
+        <ont:usesPooling rdf:resource="http://www.co-ode.org/ontologies/ont.owl#PoolingOverview"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#IntroToMessagePassing -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#IntroToMessagePassing">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#GNNConcept"/>
+        <ont:hasRepresentation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#CycleGraphExample"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#LearnerProgressTracker -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#LearnerProgressTracker">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#ITSComponent"/>
+        <ont:monitorsUser rdf:resource="http://www.example.org/gnn-its#Student01"/>
+        <ont:tracksProgress rdf:resource="http://www.example.org/gnn-its#Student01"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#ObjEvaluateGraphAccuracy -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#ObjEvaluateGraphAccuracy">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#LearningObjective"/>
+        <ont:objectiveDescription>Understand evaluationg of Graph Accuracy</ont:objectiveDescription>
+        <ont:objectiveLevel>Beginner</ont:objectiveLevel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#ObjImplementMessagePassing -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#ObjImplementMessagePassing">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#LearningObjective"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#ObjTrainGCNModel -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#ObjTrainGCNModel">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#LearningObjective"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#ObjUnderstandGraphRep -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#ObjUnderstandGraphRep">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#LearningObjective"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#PoolingOverview -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#PoolingOverview">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#GNNConcept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#PubMedDataset -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#PubMedDataset">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#GraphDataset"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#QuizGraphRepresentation -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#QuizGraphRepresentation">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#Assessment"/>
+        <ont:assessesObjective rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ObjUnderstandGraphRep"/>
+        <ont:requiresConcept rdf:resource="http://www.co-ode.org/ontologies/ont.owl#BasicGraphRepresentation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#RealTimeFeedbackEngine -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#RealTimeFeedbackEngine">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#ITSComponent"/>
+        <ont:generatesFeedback rdf:resource="http://www.co-ode.org/ontologies/ont.owl#InstructorJohn"/>
+        <ont:generatesFeedback rdf:resource="http://www.co-ode.org/ontologies/ont.owl#StudentAdvanced01"/>
+        <ont:generatesFeedback rdf:resource="http://www.example.org/gnn-its#Student01"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#ReflectionTaskOnModelPerformance -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#ReflectionTaskOnModelPerformance">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#LearningTask"/>
+        <ont:targetsObjective rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ObjEvaluateGraphAccuracy"/>
+        <ont:teachesConcept rdf:resource="http://www.co-ode.org/ontologies/ont.owl#TrainingWorkflowConcept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#SessionManagerCore -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#SessionManagerCore">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#ITSComponent"/>
+        <ont:managesSession rdf:resource="http://www.co-ode.org/ontologies/ont.owl#InstructorJohn"/>
+        <ont:managesSession rdf:resource="http://www.co-ode.org/ontologies/ont.owl#StudentAdvanced01"/>
+        <ont:managesSession rdf:resource="http://www.example.org/gnn-its#Student01"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#StarGraphExample -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#StarGraphExample">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#GraphType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#StudentAdvanced01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#StudentAdvanced01">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#User"/>
+        <ont:name>Mubaraq</ont:name>
+        <ont:qualification>Msc Computer Science</ont:qualification>
+        <ont:studentID rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">001</ont:studentID>
+        <ont:studentLevel>Beginner</ont:studentLevel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#SyntheticGraphDataset1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#SyntheticGraphDataset1">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#GraphDataset"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#ToyGraph1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#ToyGraph1">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#GraphInstance"/>
+        <ont:graphLabel>toy-example</ont:graphLabel>
+        <ont:matrixSize>5x5</ont:matrixSize>
+        <ont:numEdges rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ont:numEdges>
+        <ont:numNodes rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5</ont:numNodes>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#ToyGraph2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#ToyGraph2">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#GraphInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#TrainingWorkflowConcept -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#TrainingWorkflowConcept">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#GNNConcept"/>
+        <ont:hasLayer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#GCNLayerFundamentals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#TreeGraphExample -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#TreeGraphExample">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#GraphType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#WorkedExampleGCNForwardPass -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#WorkedExampleGCNForwardPass">
+        <rdf:type rdf:resource="http://www.example.org/gnn-its#LearningTask"/>
+        <ont:targetsObjective rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ObjImplementMessagePassing"/>
+        <ont:teachesConcept rdf:resource="http://www.co-ode.org/ontologies/ont.owl#BasicGraphRepresentation"/>
+        <ont:usesGraphDataset rdf:resource="http://www.co-ode.org/ontologies/ont.owl#SyntheticGraphDataset1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/gnn-its#Student01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/gnn-its#Student01"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.example.org/gnn-its#ITSComponent"/>
+            <rdf:Description rdf:about="http://www.example.org/gnn-its#LearningTask"/>
+            <rdf:Description rdf:about="http://www.example.org/gnn-its#User"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

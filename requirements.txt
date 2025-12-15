@@ -1,0 +1,8 @@
+streamlit
+owlready2
+pandas
+plotly
+Pillow
+openai
+anthropic
+google-generativeai
