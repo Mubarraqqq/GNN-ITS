@@ -1099,13 +1099,25 @@ def main():
                 if "hints_used" in evaluated.columns:
                     agg_dict["hints_used"] = "mean"
                 
-                concept_perf = evaluated.groupby("concept_iri").agg(agg_dict).round(3)
+                concept_perf = evaluated.groupby("concept_iri").agg(agg_dict)
                 
-                # Set column names based on what was aggregated
-                if "hints_used" in evaluated.columns:
-                    concept_perf.columns = ["Correct", "Total", "Accuracy", "Avg Hints"]
+                # Flatten multi-level columns
+                concept_perf.columns = ['_'.join(col).strip() if col[1] else col[0] for col in concept_perf.columns.values]
+                
+                # Rename columns to readable names
+                if "hints_used_mean" in concept_perf.columns:
+                    concept_perf = concept_perf.rename(columns={
+                        "correct_sum": "Correct",
+                        "correct_count": "Total",
+                        "correct_mean": "Accuracy",
+                        "hints_used_mean": "Avg Hints"
+                    })
                 else:
-                    concept_perf.columns = ["Correct", "Total", "Accuracy"]
+                    concept_perf = concept_perf.rename(columns={
+                        "correct_sum": "Correct",
+                        "correct_count": "Total",
+                        "correct_mean": "Accuracy"
+                    })
                 
                 concept_perf = concept_perf.reset_index()
                 
@@ -1113,6 +1125,8 @@ def main():
                 concept_perf["Concept"] = concept_perf["concept_iri"].apply(
                     lambda iri: engine.describe_concept(iri)["name"]
                 )
+                # Convert Accuracy to numeric and calculate Mastery %
+                concept_perf["Accuracy"] = pd.to_numeric(concept_perf["Accuracy"], errors='coerce')
                 concept_perf["Mastery %"] = (concept_perf["Accuracy"] * 100).round(1)
                 
                 # Add mastery badges
