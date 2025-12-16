@@ -6,8 +6,20 @@ from typing import List, Optional, Dict, Any
 
 from owlready2 import get_ontology, Thing
 
-
 ONTO_PATH = "ont.rdf"  # adjust if needed
+
+class OntologyEngine:
+
+
+    def __init__(self, path: str = ONTO_PATH):
+        self.onto = get_ontology(path).load()
+
+        # Namespaces (co-ode for properties/individuals, gnn-its for core classes)
+        self.O = self.onto.get_namespace("http://www.co-ode.org/ontologies/ont.owl#")
+        self.G = self.onto.get_namespace("http://www.example.org/gnn-its#")
+
+
+
 
 
 @dataclass
@@ -41,20 +53,6 @@ class AssessmentInfo:
     max_score: Optional[float]
     passing_score: Optional[float]
     required_concepts: List[str]
-
-
-class OntologyEngine:
-    """
-    High-level helper over your GNN ITS ontology.
-    Loads ont.rdf and exposes typed helpers for Streamlit.
-    """
-
-    def __init__(self, path: str = ONTO_PATH):
-        self.onto = get_ontology(path).load()
-
-        # Namespaces (co-ode for properties/individuals, gnn-its for core classes)
-        self.O = self.onto.get_namespace("http://www.co-ode.org/ontologies/ont.owl#")
-        self.G = self.onto.get_namespace("http://www.example.org/gnn-its#")
 
     # ---------- utility ----------
 
