@@ -497,8 +497,3 @@ The **GNN Intelligent Tutoring System** is a modern, AI-powered educational plat
 
 **Questions?** Check the documentation files or review the source code!
 
----
-
-**Last Updated**: December 13, 2025  
-**Version**: 1.0 Production  
-**Status**: ✅ Ready for Use
