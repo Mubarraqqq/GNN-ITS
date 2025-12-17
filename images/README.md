@@ -1,6 +1,6 @@
 # Images Directory
 
-This directory is for storing images and visual assets used in the GNN Intelligent Tutoring System.
+This directory is for storing images and visual assets used in the GNN Intelligent Tutoring System. It is still a work in progress :) 
 
 ## How to Add Images
 
