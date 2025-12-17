@@ -14,10 +14,6 @@
 4. [Core Features](#core-features)
 5. [AI Integration](#ai-integration)
 6. [User Interface](#user-interface)
-7. [Data Flow](#data-flow)
-8. [Installation & Setup](#installation--setup)
-9. [API Reference](#api-reference)
-10. [Troubleshooting](#troubleshooting)
 
 
 ---
