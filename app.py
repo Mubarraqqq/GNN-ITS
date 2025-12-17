@@ -49,37 +49,6 @@ def call_ai_api(prompt: str, max_tokens: int = 500) -> str | None:
                 temperature=0.7
             )
             return response.choices[0].message.content
-        
-        elif config["provider"] == "github":
-            import openai
-            client = openai.OpenAI(
-                api_key=config["api_key"],
-                base_url="https://models.inference.ai.azure.com"
-            )
-            response = client.chat.completions.create(
-                model="gpt-4o",
-                messages=[{"role": "user", "content": prompt}],
-                max_tokens=max_tokens,
-                temperature=0.7
-            )
-            return response.choices[0].message.content
-        
-        elif config["provider"] == "anthropic":
-            import anthropic
-            client = anthropic.Anthropic(api_key=config["api_key"])
-            response = client.messages.create(
-                model="claude-3-5-sonnet-20241022",
-                max_tokens=max_tokens,
-                messages=[{"role": "user", "content": prompt}]
-            )
-            return response.content[0].text
-        
-        elif config["provider"] == "google":
-            import google.generativeai as genai
-            genai.configure(api_key=config["api_key"])
-            model = genai.GenerativeModel("gemini-pro")
-            response = model.generate_content(prompt)
-            return response.text
     
     except Exception as e:
         st.warning(f"AI API error: {str(e)}")
