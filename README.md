@@ -5,7 +5,7 @@
 ## 📚 Table of Contents
 
 
-1. [OWL File](https://github.com/Mubarraqqq/GNN-ITS/blob/main/ont.rdf)
+1. [OWL File](https://github.com/Mubarraqqq/GNN-ITS/blob/main/ont.rdf) <--- Click here to view/download OWL file
 2. [Project Overview](#project-overview)
 3. [Quick Start](#quick-start)
 4. [Architecture & Components](#architecture--components)
