@@ -1,19 +1,17 @@
 # 🧠 GNN Intelligent Tutoring System - Complete Documentation
 
-> **Last Updated**: December 13, 2025
-> **Status**: Production Ready
-> **Version**: 1.0
 
----
 
 ## 📚 Table of Contents
 
-1. [Project Overview](#project-overview)
-2. [Quick Start](#quick-start)
-3. [Architecture & Components](#architecture--components)
-4. [Core Features](#core-features)
-5. [AI Integration](#ai-integration)
-6. [User Interface](#user-interface)
+
+1. [OWL File](https://github.com/Mubarraqqq/GNN-ITS/blob/main/ont.rdf)
+2. [Project Overview](#project-overview)
+3. [Quick Start](#quick-start)
+4. [Architecture & Components](#architecture--components)
+5. [Core Features](#core-features)
+6. [AI Integration](#ai-integration)
+7. [User Interface](#user-interface)
 
 
 ---
@@ -36,23 +34,9 @@ The **GNN Intelligent Tutoring System (ITS)** is an advanced, ontology-driven ed
 - 🤖 Self-paced learners seeking personalized tutoring
 - 👨‍🏫 Educators building ontology-based curricula
 
-### Key Statistics
-
-| Metric | Value |
-|--------|-------|
-| **Total Lines of Code** | ~1,662 |
-| **Main App** | 1,362 lines (app.py) |
-| **Ontology Engine** | ~180 lines |
-| **Question Bank** | ~120 lines |
-| **Supported AI Providers** | 4 (OpenAI, GitHub, Anthropic, Google) |
-| **Question Types** | 4 (MC, Numeric, Theory, Reflection) |
-| **UI Tabs** | 5 (Overview, Learn, Practice, Progress, Insights) |
-
----
 
 ## Quick Start
 
-### For the Impatient (5 minutes)
 
 ```bash
 # 1. Clone/navigate to project
